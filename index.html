@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>StoreX — Inventory Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+ <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Checkbox for mobile sidebar toggle  -->
+  <input type="checkbox" id="sidebar-toggle">
+  <div class="app" role="application" aria-label="StoreX inventory dashboard">
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar" aria-label="Sidebar navigation">
+      <div class="brand">
+        <div class="logo"><i class="fa-solid fa-store" style="color:white"></i></div>
+        <div>
+          StoreX
+          <div class="small muted">Inventory Dashboard</div>
+        </div>
+      </div>
+
+      <div class="nav">
+        <a href="#" id="nav-dashboard" class="active"><i class="fa-solid fa-chart-simple"></i> Dashboard</a><br>
+        <a href="#" id="nav-products"><i class="fa-solid fa-boxes-stacked"></i> Products</a><br>
+        <a href="#" id="nav-stock-alerts"><i class="fa-solid fa-bell"></i> Stock Alerts</a><br>
+        <a href="#" id="nav-sellers"><i class="fa-solid fa-people-group"></i> Sellers</a><br>
+        <a href="#" id="nav-settings"><i class="fa-solid fa-gear"></i> Settings</a><br>
+      </div>
+
+      <div class="section-title">Quick stats</div><br>
+      <div class="quick-stats">
+        <div class="stat">
+          <div class="num">1,248</div><br>
+          <div class="small">Total SKUs</div><br>
+        </div>
+        <div class="stat">
+          <div class="num">84</div><br>
+          <div class="small">Low Stock</div><br>
+        </div>
+        <div class="stat">
+          <div class="num">3,512</div><br>
+          <div class="small">Units In</div><br>
+        </div>
+        <div class="stat">
+          <div class="num">₹ 433k</div><br>
+          <div class="small">Est. Value</div><br>
+        </div>
+      </div>
+
+      <div style="flex:1"></div>
+
+      <div class="small muted">Logged in as <strong>vikash</strong></div><br>
+    </aside>
+
+    <!-- ================= MAIN AREA ================= -->
+    <main class="main">
+
+      <!-- TOPBAR -->
+      <div class="topbar" role="region" aria-label="Top bar">
+        <div class="left">
+          <!-- label toggles the sidebar checkbox on mobile -->
+          <label for="sidebar-toggle" class="hamburger" title="Toggle menu">
+            <i class="fa-solid fa-bars"></i>
+            <span class="small muted">Menu</span>
+          </label>
+
+          <div class="search" role="search">
+            <i class="fa-solid fa-magnifying-glass muted"></i>
+            <input type="search" placeholder="Search products" aria-label="Search inventory">
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="hamburger" title="Notifications">
+            <i class="fa-solid fa-bell"></i>
+          </button>
+          <div class="avatar" title="User">V
+          </div>
+        </div>
+      </div>
+
+      <!-- SUMMARY CARDS -->
+      <section class="summary" aria-label="Summary">
+        <div class="card">
+          <div>
+            <div class="label">Total products</div>
+            <div class="value">1,248</div>
+          </div>
+          <i class="fa-solid fa-boxes-stacked fa-2x" style="opacity:0.12"></i>
+        </div>
+        <div class="card">
+          <div>
+            <div class="label">Low stock</div>
+            <div class="value">84</div>
+          </div>
+          <i class="fa-solid fa-triangle-exclamation fa-2x" style="opacity:0.12"></i>
+        </div>
+        <div class="card">
+          <div>
+            <div class="label">Today In</div>
+            <div class="value">128 units</div>
+          </div>
+          <i class="fa-solid fa-truck fa-2x" style="opacity:0.12"></i>
+        </div>
+        <div class="card">
+          <div>
+            <div class="label">Inventory Value</div>
+            <div class="value">₹ 433,200</div>
+          </div>
+          <i class="fa-solid fa-indian-rupee-sign fa-2x" style="opacity:0.12"></i>
+        </div>
+      </section>
+
+      <!-- CONTENT GRID: PRODUCTS + SIDE PANEL -->
+      <section class="content-grid">
+
+        <!-- PRODUCTS (left) -->
+        <div class="products" aria-label="Products list">
+          <div class="products-header">
+            <h3 style="margin:0">Products</h3>
+            <div class="small muted">Showing 12 of 1,248</div>
+          </div>
+
+          <div class="products-grid" role="list">
+            <!-- Example product card-->
+            <article class="product-card" role="listitem" aria-label="Product: Blue T-shirt">
+              <div class="meta">
+                <div class="thumb">
+                <img src="Blue shirts.webp"alt=""></div>
+                <div style="flex:1">
+                  <div class="product-name">Blue T-shirt</div>
+                  <div class="product-sku">SKU: BT-001 • Clothing</div>
+                </div>
+                <div class="small muted">₹ 299</div>
+              </div>
+
+              <div class="stock">
+                <div class="small muted">Available: <strong>24</strong></div>
+                <div class="badge ok">In stock</div>
+              </div>
+            </article>
+
+            <article class="product-card" role="listitem" aria-label="Product: Wireless Mouse">
+              <div class="meta">
+                <div class="thumb">
+               <img src="mouse.webp" alt=""></div>
+                <div style="flex:1">
+                  <div class="product-name">Wireless Mouse</div>
+                  <div class="product-sku">SKU: MOU-203 • Electronics</div>
+                </div>
+                <div class="small muted">₹ 899</div>
+              </div>
+
+              <div class="stock">
+                <div class="small muted">Available: <strong>6</strong></div>
+                <div class="badge low">Low stock</div>
+              </div>
+            </article>
+
+            <article class="product-card" role="listitem" aria-label="Product: Ceramic Mug">
+              <div class="meta">
+                <div class="thumb">
+                <img src="mug.webp"alt=""></div>
+                <div style="flex:1">
+                  <div class="product-name">Ceramic Mug</div>
+                  <div class="product-sku">SKU: MUG-12 • Home</div>
+                </div>
+                <div class="small muted">₹ 199</div>
+              </div>
+
+              <div class="stock">
+                <div class="small muted">Available: <strong>120</strong></div>
+                <div class="badge ok">In stock</div>
+              </div>
+            </article>
+
+            <article class="product-card" role="listitem" aria-label="Product: Phone Charger">
+              <div class="meta">
+                <div class="thumb">
+                <img src="charger.webp" alt=""></div>
+                <div style="flex:1">
+                  <div class="product-name">Phone Charger</div>
+                  <div class="product-sku">SKU: CHG-04 • Electronics</div>
+                </div>
+                <div class="small muted">₹ 399</div>
+              </div>
+
+              <div class="stock">
+                <div class="small muted">Available: <strong>0</strong></div>
+                <div class="badge low">Out</div>
+              </div>
+            </article>
+
+            <!-- Add more cards  -->
+            <article class="product-card" role="listitem" aria-label="Product: Notebook">
+              <div class="meta">
+                <div class="thumb">
+                <img src="spiral.webp" alt=""></div>
+                <div style="flex:1">
+                  <div class="product-name">Spiral Notebook</div>
+                  <div class="product-sku">SKU: NB-99 • Stationery</div>
+                </div>
+                <div class="small muted">₹ 69</div>
+              </div>
+
+              <div class="stock">
+                <div class="small muted">Available: <strong>420</strong></div>
+                <div class="badge ok">In stock</div>
+              </div>
+            </article>
+
+            <article class="product-card" role="listitem" aria-label="Product: Earbuds">
+              <div class="meta">
+                <div class="thumb">
+                <img src="buds.webp" alt=""></div>
+                <div style="flex:1">
+                  <div class="product-name">Wireless Earbuds</div>
+                  <div class="product-sku">SKU: EB-66 • Electronics</div>
+                </div>
+                <div class="small muted">₹ 1,599</div>
+              </div>
+
+              <div class="stock">
+                <div class="small muted">Available: <strong>14</strong></div>
+                <div class="badge ok">In stock</div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- RIGHT PANEL-->
+        <aside class="panel" aria-label="Quick panel">
+          <div>
+            <h4 style="margin:0">Low stock alerts</h4>
+            <div class="small muted">Action recommended</div><br>
+          </div>
+
+          <div class="list">
+            <div class="row">
+              <div>
+                <div style="font-weight:700">Phone Charger</div>
+                <div class="small muted">SKU CHG-04</div><br><br>
+              </div>
+              <div class="badge low">0</div>
+            </div>
+
+            <div class="row">
+              <div>
+                <div style="font-weight:700">Wireless Mouse</div>
+                <div class="small muted">SKU MOU-203</div><br><br>
+              </div>
+              <div class="badge low">6</div>
+            </div>
+
+            <div class="row">
+              <div>
+                <div style="font-weight:700">Blue T-shirt</div>
+                <div class="small muted">SKU BT-001</div><br><br>
+              </div>
+              <div class="badge ok">24</div>
+            </div>
+          </div>
+
+          <div style="margin-top:auto">
+            <h4 style="margin:0">Recent activity</h4>
+            <div class="small muted">Last 24 hours</div><br><br>
+
+            <div class="list" style="margin-top:8px">
+              <div class="row"><div>+ 120 units received</div><div class="small muted">12:03</div></div><br>
+              <div class="row"><div>Order allocated: Wireless Mouse</div><div class="small muted">09:41</div></div>
+            </div>
+          </div>
+        </aside>
+      </section>
+    </main>
+  </div>
+  <footer>
+    <p>© 2025 StoreX | Simple Inventory Dashboard</p>
+  </footer>
+
+<script src="script.js"></script>
+</body>
+</html>
